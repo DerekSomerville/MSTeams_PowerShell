@@ -3,7 +3,7 @@
 # Install-Module MicrosoftTeams -AllowPrerelease -RequiredVersion "1.1.5-preview"
 $hasCsvChannel = $false
 $hasCsvTeam = $false
-function Get-CsvTeamAndChannel
+function getCsvTeamAndChannel
 {
 	$header = $student_csv | gm
 	if ($header | ? {$_.name -eq "Channel"})
@@ -19,9 +19,9 @@ Connect-MicrosoftTeams
 $fileName = $args[0]
 $teamForAll = $args[1]
 $student_csv = Import-Csv -Path $fileName	
-Get-CsvTeamAndChannel
+getCsvTeamAndChannel
 $team = Get-Team -DisplayName ("UofG Internship")
-Write-Output $team
+Write-Output $team.GroupId
 $team = Get-Team -DisplayName ($teamForAll)
 if (!$team) 
 {
