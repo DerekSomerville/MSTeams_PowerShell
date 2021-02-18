@@ -14,6 +14,6 @@ if (!$team)
 }
 echo($team.GroupId)
 foreach($row in $student_csv){
-      Add-TeamUser -GroupId $team.GroupId -User $row.EmailAddress -Role Member     
+      Add-TeamUser -GroupId $team.GroupId -User $row.Email -Role Member     
 }
 Disconnect-MicrosoftTeams
