@@ -9,7 +9,7 @@ $team = Get-Team -DisplayName $teamForAll
 #echo($team.GroupId)
 $channels = @{}
 
-$GroupId = $team.GroupId
+$GroupId = "a4a306c3-e31e-48f6-9eb9-f1ee4d95eb4b"
 foreach($row in $student_csv){
 	#if(-not($channels.ContainsKey($row.Channel))){
 	#	$channels.Add($row.Channel, $true)
